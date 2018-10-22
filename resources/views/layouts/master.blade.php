@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang='en'>
 <head>
-    <title>Project 3</title>
+    <title>{{ config('app.name') }}</title>
     <meta charset='utf-8'>
 
     {{-- CSS global to every page can be loaded here --}}
@@ -15,10 +15,6 @@
 
 <section>
     @yield('form')
-</section>
-
-<section>
-    @yield('collegeCost')
 </section>
 
 <footer>

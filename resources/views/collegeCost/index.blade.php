@@ -4,7 +4,7 @@
     <div class='container'>
         {{--<form method='GET'>--}}
 
-        <h1>College Cost Calculator</h1>
+        <h1>{{ config('app.name') }}</h1>
 
         <p>Enter the information below to see how much each year of college will cost by the time your child starts.</p>
 
@@ -30,6 +30,19 @@
         </div>
 
         {{--</form>--}}
+    </div>
+
+    <div class='form-group'>
+        {{--if there are errors--}}
+        <div class='alert alert-danger'>
+            <ul>
+                {{--display errors--}}
+            </ul>
+        </div>
+        {{--otherwise, display the cost--}}
+        <div>
+            <p>The estimated cost of college each year when your child starts is:</p>
+        </div>
     </div>
 @endsection
 
