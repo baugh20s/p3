@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 class CollegeCalcController extends Controller
 {
     public function index () {
-        return 'Show the form';
+        return view('collegeCost.index');
     }
 
     public function calcCollegeCost () {
-        return 'calculate the cost and redirect the user back to the index';
+        return view('collegeCost.calcCollegeCost');
     }
 }
