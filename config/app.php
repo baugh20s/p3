@@ -2,6 +2,13 @@
 
 return [
 
+/* from week 8 part 2 video */
+    'nav' => [
+        '/index' => 'Calculator',
+        '/about' => 'About',
+        '/contact' => 'Contact',
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
