@@ -19,7 +19,7 @@ class collegeCalcController extends Controller
             'collegeCostNow' => $request->session()->get('collegeCostNow',''),
             'yrsUntilStart' => $request->session()->get('yrsUntilStart',''),
             'collegeInflation' => $request->session()->get('collegeInflation',''),
-            'collegeCostFuture' => null,
+            'collegeCostFuture' => $request->session()->get('collegeCostFuture', ''),
         ]);
     }
     /**
