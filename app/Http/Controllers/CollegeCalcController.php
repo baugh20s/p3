@@ -15,8 +15,8 @@ class collegeCalcController extends Controller
     public function index (Request $request)
     {
         return view('collegeCost.index')->with([
-            'childName' => $request->input('childName',''),
-            'collegeCostNow' => $request->input('collegeCostNow',''),
+            'childName' => $request->session()->get('childName',''),
+            'collegeCostNow' => $request->session()->get('collegeCostNow',''),
             'yrsUntilStart' => $request->session()->get('yrsUntilStart',''),
             'collegeInflation' => $request->session()->get('collegeInflation',''),
             'collegeCostFuture' => null,
@@ -46,7 +46,8 @@ class collegeCalcController extends Controller
         # future college cost = collegeCostNow * (1 + collegeInflation) raised to (yrsUntilStart)
         $collegeCostFuture = round($collegeCostNow * pow((1 + ($collegeInflation / 100)), $yrsUntilStart), 2);
         # Redirect back to the form page with the inputs and results
-        return view('collegeCost.index')->with([
+        # return view ('collegeCost.index')->with([
+        return redirect ('/')->with([
             'childName' => $childName,
             'collegeCostNow' => $collegeCostNow,
             'yrsUntilStart' => $yrsUntilStart,

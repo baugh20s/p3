@@ -13,7 +13,7 @@
             <div class='form-group'>
                 <label for='childName'>Child Name
                 </label><br>
-                <input type='text' name='childName' id='childName' class='form-control' value='{{$childName}}'>
+                <input type='text' name='childName' id='childName' class='form-control' value='{{old('childName')}}'>
             </div>
 
             {{--input type 2: college cost now--}}
@@ -25,7 +25,7 @@
                        name='collegeCostNow'
                        id='collegeCostNow'
                        class='form-control'
-                       value='{{$collegeCostNow}}'>
+                       value='{{old('collegeCostNow')}}'>
             </div>
 
             {{--years until starting college--}}
@@ -37,7 +37,7 @@
                        name='yrsUntilStart'
                        id='yrsUntilStart'
                        class='form-control'
-                       value='{{$yrsUntilStart}}'>
+                       value='{{old('yrsUntilStart')}}'>
             </div>
 
             {{--input type 3: inflation rate--}}
@@ -49,7 +49,7 @@
                 <select name='collegeInflation' id='collegeInflation' class='form-control'>
                     <option selected>Select an inflation rate:</option>
                     @for ($x = 1; $x < 11; $x++) {
-                        @if ($collegeInflation) == $x) {
+                        @if (old('collegeInflation')) == $x) {
                             <option value='{{$x}}' selected>{{$x}}</option>\n;
                         } @else {
                             <option value='{{$x}}'>{{$x}}</option>\n;
